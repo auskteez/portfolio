@@ -4,21 +4,28 @@ window.addEventListener('DOMContentLoaded', async () => {
     if (mainContent) {
         mainContent.style['height'] = '100vh';
         mainContent.style['overflow'] = 'hidden';
-    
+
         setTimeout(() => {
             mainContent.style.removeProperty('height');
             mainContent.style.removeProperty('overflow');
-        }, 3000);
-    
+        }, 4000);
+
         setTimeout(() => {
             document.body.classList.add("doneload");
-        }, 1500);
+        }, 3900);
     }
 });
 </script>
 <style>
-    body:not(.doneload) #nav,
-    body:not(.doneload) #nav ~ div {
-        opacity: 0 !important;
-    }
+body:not(.doneload) #nav,
+body:not(.doneload) #footer,
+body:not(.doneload) #nav~div,
+body:not(.doneload) .framer-pointer-events-none {
+    cursor: none !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+}
+body:not(.doneload) {
+    cursor: none !important;
+}
 </style>
